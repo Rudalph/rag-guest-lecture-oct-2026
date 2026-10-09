@@ -1,0 +1,10 @@
+langchain-community
+langchain-text-splitters
+langchain-huggingface
+langchain-chroma
+langchain-groq
+langchain-core
+langchain-classic
+sentence-transformers
+pypdf
+python-dotenv
