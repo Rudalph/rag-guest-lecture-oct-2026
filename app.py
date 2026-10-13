@@ -67,4 +67,4 @@ if user_query:
         "input": user_query,
         "context": retrieved_docs
     })
-    print(response["answer"])
+    print(response)
