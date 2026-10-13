@@ -62,6 +62,9 @@ from langchain_classic.chains import create_retrieval_chain
 from langchain_classic.chains.combine_documents import create_stuff_documents_chain
 if user_query:
     question_answer_chain = create_stuff_documents_chain(llm, prompt)
-    rag_chain = create_retrieval_chain(retriever, question_answer_chain)
-    response = rag_chain.invoke({"input": user_query})
+    retrieved_docs = retriever.invoke(user_query)
+    response = question_answer_chain.invoke({            
+        "input": user_query,
+        "context": retrieved_docs
+    })
     print(response["answer"])
